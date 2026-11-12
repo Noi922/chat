@@ -790,6 +790,7 @@
     '/kick <Name>, /delroom <Raum> – nur für Admins',
     '',
     'Formatierung: **fett**, *kursiv*, ~~durchgestrichen~~, `Code`, ```Codeblock```, @Name erwähnt jemanden.',
+    'Die ausführliche Anleitung öffnest du über das Fragezeichen oben rechts.',
     'Tasten: Enter sendet, Umschalt+Enter macht eine neue Zeile, Tab vervollständigt Namen, ↑ bearbeitet deine letzte Nachricht.',
   ].join('\n');
 

@@ -2,6 +2,8 @@
 
 Ein selbst gehosteter Echtzeit-Chat mit Web-Oberfläche. Node.js und WebSockets, eine einzige Abhängigkeit (`ws`), keine Datenbank nötig.
 
+**[Zur Bedienungsanleitung](ANLEITUNG.md)** – Schritt für Schritt mit Bildern, für Nutzer und Betreiber.
+
 ## Funktionen
 
 **Chat**

@@ -24,6 +24,7 @@
   <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6L7 10z"/><path d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></symbol>
   <symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 4H5v16h5M15 8l4 4-4 4M9 12h10"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.500 9.500a2.500 2.500 0 114 2c-.9.600-1.500 1.200-1.500 2.300"/><path d="M12 17v.2"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
 </svg>
 
@@ -41,6 +42,7 @@
     </label>
     <p class="form-error" id="loginError" role="alert"></p>
     <button type="submit" class="btn-primary" id="loginButton">Beitreten</button>
+    <a class="login-help" href="/anleitung.html">Wie funktioniert der Chat? Zur Anleitung</a>
   </form>
 </section>
 
@@ -87,6 +89,7 @@
         <button id="roomTopic" class="topic" type="button" title="Thema ändern"></button>
       </div>
       <span id="connection" class="connection" hidden>Verbindung getrennt – verbinde neu …</span>
+      <a class="icon-btn" href="/anleitung.html" target="_blank" rel="noopener" title="Anleitung" aria-label="Anleitung öffnen"><svg class="icon"><use href="#i-help"/></svg></a>
     </header>
 
     <div class="scroll-wrap">

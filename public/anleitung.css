@@ -1,0 +1,114 @@
+/* Anleitung – nutzt die Farben aus style.css */
+html, body { height: auto; }
+body { overflow: visible; min-height: 100vh; background: var(--bg); line-height: 1.65; font-size: 16px; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+.g-top {
+  position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px;
+  padding: 10px 20px; background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.g-top strong { flex: 1; font-size: 16px; }
+.g-top a.back {
+  padding: 8px 16px; border-radius: 10px; background: var(--accent); color: var(--accent-text);
+  font-weight: 650; text-decoration: none; font-size: 14px; white-space: nowrap;
+}
+.g-top a.back:hover { filter: brightness(1.08); }
+
+.hero {
+  padding: 64px 20px 56px; text-align: center;
+  background: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 72%);
+}
+.hero .eyebrow {
+  display: inline-block; padding: 3px 12px; border-radius: 99px; background: var(--accent-soft);
+  color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+}
+.hero h1 { margin: 14px 0 10px; font-size: clamp(32px, 6vw, 50px); line-height: 1.1; letter-spacing: -0.03em; }
+.hero p { margin: 0 auto; max-width: 560px; color: var(--muted); font-size: 18px; }
+.hero-shot { max-width: 940px; margin: 40px auto 0; }
+
+.layout { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 48px; }
+.toc { position: sticky; top: 80px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; font-size: 14.5px; }
+.toc h2 { margin: 18px 0 6px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.toc h2:first-child { margin-top: 0; }
+.toc a { display: block; padding: 4px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
+.toc a:hover { background: var(--surface-2); color: var(--accent); }
+
+.part {
+  margin: 56px 0 8px; padding: 22px 26px; border-radius: 18px; color: #fff;
+  background: linear-gradient(120deg, #6d4aff, #a04bff);
+}
+.part:first-child { margin-top: 0; }
+.part span { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
+.part h2 { margin: 2px 0 0; font-size: 28px; letter-spacing: -0.02em; }
+.part p { margin: 4px 0 0; opacity: 0.9; }
+
+section { padding-top: 34px; }
+section > h3 { margin: 0 0 10px; font-size: 23px; letter-spacing: -0.015em; display: flex; align-items: center; gap: 12px; }
+section > h3 .num {
+  width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 11px;
+  background: var(--accent-soft); color: var(--accent); font-size: 15px; font-weight: 800;
+}
+section p { margin: 0 0 12px; }
+section ul, section ol { margin: 0 0 14px; padding-left: 22px; list-style: revert; }
+section li { margin-bottom: 5px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+
+figure { margin: 18px 0 22px; }
+figure img, .hero-shot img {
+  display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: var(--shadow); background: var(--surface);
+}
+figcaption { margin-top: 8px; text-align: center; color: var(--muted); font-size: 14px; }
+.phones { display: grid; grid-template-columns: repeat(2, minmax(0, 250px)); gap: 20px; justify-content: center; }
+.narrow { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+kbd, code {
+  font: 0.86em/1.4 ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; white-space: nowrap;
+}
+kbd { border-bottom-width: 2px; font-family: inherit; font-size: 0.85em; font-weight: 600; }
+pre {
+  margin: 0 0 14px; padding: 14px 16px; border-radius: 12px; overflow-x: auto;
+  background: #1c1730; color: #ece9f8; border: 1px solid #332b52; font-size: 14px;
+}
+pre code { background: none; border: 0; padding: 0; color: inherit; white-space: pre; }
+
+.table { overflow-x: auto; margin: 0 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { white-space: nowrap; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 0 0 16px; }
+.card { padding: 16px 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.card b { display: block; margin-bottom: 2px; }
+.card .emoji { font-size: 24px; display: block; margin-bottom: 6px; }
+.card p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+
+.note {
+  margin: 0 0 16px; padding: 12px 16px; border-radius: 12px; background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+}
+.note.warn { background: var(--mention); border-left-color: var(--mention-line); }
+.note b { display: block; }
+
+details { margin: 0 0 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+summary { padding: 12px 16px; font-weight: 650; cursor: pointer; }
+details > div { padding: 0 16px 12px; }
+details p:last-child { margin-bottom: 0; }
+
+footer.end { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; text-align: center; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .toc { position: static; max-height: none; margin-bottom: 32px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  .hero { padding: 40px 16px 36px; }
+  .layout { padding-left: 16px; padding-right: 16px; }
+  td:first-child { white-space: normal; }
+}
+@media print {
+  .g-top, .toc { display: none; }
+  .layout { display: block; }
+  figure img { box-shadow: none; }
+}

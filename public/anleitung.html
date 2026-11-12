@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Anleitung · Chat</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/anleitung.css">
+<script src="/anleitung.js" defer></script>
+</head>
+<body>
+
+<header class="g-top">
+  <div class="logo small" aria-hidden="true"><span></span><span></span><span></span></div>
+  <strong><span id="serverName">Chat</span> · Anleitung</strong>
+  <a class="back" href="/">Zum Chat</a>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">BEDIENUNGSANLEITUNG</span>
+  <h1>So funktioniert der Chat</h1>
+  <p>Alles, was du zum Chatten brauchst – und alles, was du brauchst, um den Server selbst zu betreiben.</p>
+  <div class="hero-shot"><img src="/anleitung/ueberblick.png" width="2240" height="1400" alt="Der Chat mit Raumliste links, Nachrichten in der Mitte und Eingabefeld unten"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Inhalt">
+    <h2>Teil 1 · Chatten</h2>
+    <a href="#beitreten">1. Beitreten</a>
+    <a href="#ueberblick">2. Die Oberfläche</a>
+    <a href="#schreiben">3. Nachrichten schreiben</a>
+    <a href="#werkzeuge">4. Antworten &amp; reagieren</a>
+    <a href="#bilder">5. Bilder senden</a>
+    <a href="#raeume">6. Räume</a>
+    <a href="#privat">7. Privat &amp; Erwähnungen</a>
+    <a href="#befehle">8. Befehle</a>
+    <a href="#tasten">9. Tastenkürzel</a>
+    <a href="#einstellungen">10. Einstellungen</a>
+    <a href="#handy">11. Am Handy</a>
+    <h2>Teil 2 · Server betreiben</h2>
+    <a href="#docker">12. Start mit Docker</a>
+    <a href="#linux">13. Ohne Docker</a>
+    <a href="#konfiguration">14. Konfiguration</a>
+    <a href="#admin">15. Admin-Rechte</a>
+    <a href="#internet">16. Ins Internet stellen</a>
+    <a href="#pflege">17. Backup &amp; Update</a>
+    <h2>Hilfe</h2>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <main>
+    <div class="part">
+      <span>Teil 1</span>
+      <h2>Chatten</h2>
+      <p>Für alle, die den Chat benutzen.</p>
+    </div>
+
+    <section id="beitreten">
+      <h3><span class="num">1</span>Beitreten</h3>
+      <p>Öffne die Adresse des Chats im Browser. Du brauchst kein Konto und kein Passwort.</p>
+      <ol>
+        <li>Gib einen <b>Namen</b> ein: 2 bis 20 Zeichen aus Buchstaben, Ziffern, <code>.</code>, <code>-</code> und <code>_</code>, ohne Leerzeichen.</li>
+        <li>Wähle einen <b>Raum</b>. Voreingestellt ist <code>lobby</code>. Gibst du einen Namen ein, den es noch nicht gibt, entsteht ein neuer Raum.</li>
+        <li>Klicke auf <b>Beitreten</b>.</li>
+      </ol>
+      <figure class="narrow">
+        <img src="/anleitung/anmeldung.png" width="1520" height="1120" alt="Anmeldefenster mit den Feldern Name und Raum" loading="lazy">
+      </figure>
+      <div class="note"><b>Name schon vergeben?</b>Jeder Name kann nur einmal gleichzeitig online sein. Wähle einfach einen anderen. Dein Browser merkt sich Namen und Raum für das nächste Mal.</div>
+    </section>
+
+    <section id="ueberblick">
+      <h3><span class="num">2</span>Die Oberfläche</h3>
+      <div class="cards">
+        <div class="card"><span class="emoji">🗂️</span><b>Links: Räume</b><p>Alle Räume mit der Zahl der Personen, die gerade dort sind. Ein Klick wechselt den Raum.</p></div>
+        <div class="card"><span class="emoji">🟢</span><b>Links: Online</b><p>Wer im aktuellen Raum ist. Ein Klick auf einen Namen beginnt eine Privatnachricht.</p></div>
+        <div class="card"><span class="emoji">💬</span><b>Mitte: Nachrichten</b><p>Der Verlauf des Raums. Oben steht der Raumname mit seinem Thema.</p></div>
+        <div class="card"><span class="emoji">⌨️</span><b>Unten: Eingabe</b><p>Hier schreibst du. Links das Bild-Symbol, rechts Emojis und Senden.</p></div>
+        <div class="card"><span class="emoji">⚙️</span><b>Unten links: Du</b><p>Dein Name und die Schalter für Design, Ton, Benachrichtigungen und Abmelden.</p></div>
+      </div>
+    </section>
+
+    <section id="schreiben">
+      <h3><span class="num">3</span>Nachrichten schreiben</h3>
+      <p>Tippe unten ins Eingabefeld und drücke <kbd>Enter</kbd>. Für eine neue Zeile innerhalb der Nachricht drückst du <kbd>Umschalt</kbd> + <kbd>Enter</kbd>.</p>
+      <p>Mit ein paar Zeichen kannst du Text hervorheben:</p>
+      <div class="table"><table>
+        <tr><th>Du schreibst</th><th>Es erscheint</th></tr>
+        <tr><td><code>**wichtig**</code></td><td><strong>wichtig</strong></td></tr>
+        <tr><td><code>*betont*</code></td><td><em>betont</em></td></tr>
+        <tr><td><code>~~erledigt~~</code></td><td><s>erledigt</s></td></tr>
+        <tr><td><code>`npm start`</code></td><td><code>npm start</code></td></tr>
+        <tr><td><code>```</code> … <code>```</code></td><td>Ein mehrzeiliger Codeblock</td></tr>
+        <tr><td><code>https://example.com</code></td><td>Ein klickbarer Link</td></tr>
+        <tr><td><code>@Anna</code></td><td>Eine Erwähnung – Anna wird benachrichtigt</td></tr>
+      </table></div>
+      <p>Über das Smiley-Symbol rechts im Eingabefeld fügst du Emojis ein. Wenn jemand gerade tippt, siehst du das über dem Eingabefeld.</p>
+    </section>
+
+    <section id="werkzeuge">
+      <h3><span class="num">4</span>Antworten, reagieren, bearbeiten, löschen</h3>
+      <p>Fahre mit der Maus über eine Nachricht (am Handy: tippe sie an). Rechts oben erscheinen kleine Symbole:</p>
+      <figure>
+        <img src="/anleitung/werkzeuge.png" width="1704" height="266" alt="Eine Nachricht mit eingeblendeten Symbolen und der Auswahl an Reaktionen" loading="lazy">
+        <figcaption>Die Symbolleiste einer Nachricht mit geöffneten Reaktionen</figcaption>
+      </figure>
+      <div class="table"><table>
+        <tr><th>Symbol</th><th>Was es tut</th></tr>
+        <tr><td>😊 Reagieren</td><td>Öffnet sechs Emojis. Ein Klick setzt deine Reaktion, ein zweiter Klick auf dieselbe Reaktion nimmt sie zurück.</td></tr>
+        <tr><td>↩ Antworten</td><td>Deine nächste Nachricht zitiert diese Nachricht. Ein Klick auf das Zitat springt später zum Original.</td></tr>
+        <tr><td>✏️ Bearbeiten</td><td>Nur bei eigenen Nachrichten. Der Text landet im Eingabefeld; <kbd>Enter</kbd> speichert, <kbd>Esc</kbd> bricht ab. Bearbeitete Nachrichten tragen den Hinweis „(bearbeitet)".</td></tr>
+        <tr><td>🗑 Löschen</td><td>Nur bei eigenen Nachrichten (Admins: bei allen). Die Nachricht verschwindet für alle und lässt sich nicht wiederherstellen.</td></tr>
+      </table></div>
+    </section>
+
+    <section id="bilder">
+      <h3><span class="num">5</span>Bilder senden</h3>
+      <p>Es gibt drei Wege:</p>
+      <ul>
+        <li>auf das <b>Bild-Symbol</b> links im Eingabefeld klicken und eine Datei wählen,</li>
+        <li>ein Bild aus der <b>Zwischenablage einfügen</b> (<kbd>Strg</kbd> + <kbd>V</kbd>), zum Beispiel einen Screenshot,</li>
+        <li>eine Bilddatei mit der Maus <b>ins Chatfenster ziehen</b>.</li>
+      </ul>
+      <p>Steht beim Hochladen Text im Eingabefeld, wird er als Bildunterschrift mitgeschickt. Ein Klick auf ein Bild zeigt es groß.</p>
+      <div class="note">Erlaubt sind PNG, JPEG, GIF und WebP bis 5 MB – sofern der Betreiber nichts anderes eingestellt hat. Fehlt das Bild-Symbol, sind Bilder auf diesem Server abgeschaltet.</div>
+    </section>
+
+    <section id="raeume">
+      <h3><span class="num">6</span>Räume</h3>
+      <ul>
+        <li><b>Wechseln:</b> links auf einen Raum klicken oder <code>/join raumname</code> schreiben.</li>
+        <li><b>Neu erstellen:</b> links unter der Raumliste einen Namen in „Neuer Raum …" eintippen und <kbd>Enter</kbd> drücken. Erlaubt sind Buchstaben, Ziffern, <code>-</code> und <code>_</code>.</li>
+        <li><b>Thema setzen:</b> oben auf die Zeile unter dem Raumnamen klicken oder <code>/topic Text</code> schreiben.</li>
+        <li><b>Einladen:</b> die Adresse aus dem Browser kopieren. Sie endet auf <code>#raumname</code> und führt direkt in diesen Raum.</li>
+        <li><b>Ältere Nachrichten:</b> ganz nach oben scrollen und auf „Ältere Nachrichten laden" klicken.</li>
+      </ul>
+      <div class="note warn"><b>Räume sind offen.</b>Jeder, der den Chat erreicht, kann jeden Raum betreten und den Verlauf lesen. Schreibe nichts hinein, was nicht alle sehen dürfen.</div>
+    </section>
+
+    <section id="privat">
+      <h3><span class="num">7</span>Privatnachrichten und Erwähnungen</h3>
+      <p><b>Privat schreiben:</b> Klicke links auf einen Namen oder schreibe <code>/msg Name Text</code>. Die Nachricht sehen nur ihr beide. Sie erscheint mit einem Schloss 🔒 im Verlauf und funktioniert auch, wenn die andere Person in einem anderen Raum ist.</p>
+      <p><b>Jemanden erwähnen:</b> Schreibe <code>@Name</code>. Die Nachricht wird bei dieser Person gelb hervorgehoben, und sie bekommt einen Ton und – wenn eingeschaltet – eine Benachrichtigung.</p>
+      <div class="note">Privatnachrichten werden nicht gespeichert. Nach dem Neuladen der Seite sind sie weg, und wer offline ist, bekommt sie nicht.</div>
+    </section>
+
+    <section id="befehle">
+      <h3><span class="num">8</span>Befehle</h3>
+      <p>Befehle beginnen mit einem Schrägstrich und werden wie eine Nachricht abgeschickt.</p>
+      <div class="table"><table>
+        <tr><th>Befehl</th><th>Wirkung</th></tr>
+        <tr><td><code>/help</code></td><td>Zeigt alle Befehle im Chat an</td></tr>
+        <tr><td><code>/nick Name</code></td><td>Ändert deinen Namen</td></tr>
+        <tr><td><code>/me Text</code></td><td>Sendet eine Aktion, z. B. <code>/me winkt</code> wird zu <em>Anna winkt</em></td></tr>
+        <tr><td><code>/msg Name Text</code></td><td>Privatnachricht</td></tr>
+        <tr><td><code>/join Raum</code></td><td>Wechselt den Raum oder erstellt ihn</td></tr>
+        <tr><td><code>/topic Text</code></td><td>Setzt das Thema des Raums (ohne Text: entfernt es)</td></tr>
+        <tr><td><code>/shrug</code></td><td>Sendet ¯\_(ツ)_/¯</td></tr>
+        <tr><td><code>/clear</code></td><td>Leert nur deine eigene Ansicht</td></tr>
+        <tr><td><code>/admin Passwort</code></td><td>Holt Admin-Rechte (siehe <a href="#admin">Abschnitt 15</a>)</td></tr>
+      </table></div>
+      <p>Soll eine Nachricht wirklich mit einem Schrägstrich beginnen, schreibe zwei: <code>//so</code>.</p>
+    </section>
+
+    <section id="tasten">
+      <h3><span class="num">9</span>Tastenkürzel</h3>
+      <div class="table"><table>
+        <tr><th>Taste</th><th>Wirkung</th></tr>
+        <tr><td><kbd>Enter</kbd></td><td>Nachricht senden</td></tr>
+        <tr><td><kbd>Umschalt</kbd> + <kbd>Enter</kbd></td><td>Neue Zeile</td></tr>
+        <tr><td><kbd>Tab</kbd></td><td>Angefangenen Namen vervollständigen, z. B. <code>be</code> zu <code>@Ben</code></td></tr>
+        <tr><td><kbd>↑</kbd> bei leerem Feld</td><td>Deine letzte Nachricht bearbeiten</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Antwort oder Bearbeitung abbrechen, Fenster schließen</td></tr>
+      </table></div>
+    </section>
+
+    <section id="einstellungen">
+      <h3><span class="num">10</span>Einstellungen</h3>
+      <p>Unten links neben deinem Namen sitzen vier Schalter:</p>
+      <div class="table"><table>
+        <tr><th>Schalter</th><th>Wirkung</th></tr>
+        <tr><td>◐ Design</td><td>Wechselt zwischen automatisch (wie dein Gerät), hell und dunkel</td></tr>
+        <tr><td>🔊 Ton</td><td>Kurzer Ton bei Erwähnungen und Privatnachrichten</td></tr>
+        <tr><td>🔔 Benachrichtigungen</td><td>Meldung des Browsers, wenn der Chat im Hintergrund ist. Beim ersten Einschalten fragt der Browser nach deiner Erlaubnis.</td></tr>
+        <tr><td>⇥ Abmelden</td><td>Verlässt den Chat und gibt deinen Namen frei</td></tr>
+      </table></div>
+      <figure>
+        <img src="/anleitung/dunkel.png" width="2240" height="1400" alt="Der Chat im dunklen Design" loading="lazy">
+        <figcaption>Das dunkle Design</figcaption>
+      </figure>
+      <p>Ungelesene Nachrichten zählt der Chat im Titel des Browser-Tabs mit, zum Beispiel „(3) #lobby". Bricht die Verbindung ab, verbindet er sich von selbst neu.</p>
+    </section>
+
+    <section id="handy">
+      <h3><span class="num">11</span>Am Handy</h3>
+      <p>Der Chat läuft im Browser des Handys, eine App ist nicht nötig. Räume, Personen und Einstellungen erreichst du über das Menü-Symbol ☰ oben links.</p>
+      <figure class="phones">
+        <img src="/anleitung/handy.png" width="780" height="1520" alt="Der Chat auf dem Handy" loading="lazy">
+        <img src="/anleitung/handy-menue.png" width="780" height="1520" alt="Das aufgeklappte Menü auf dem Handy" loading="lazy">
+      </figure>
+      <p>Tipp: Über „Zum Startbildschirm hinzufügen" im Browser-Menü legst du dir den Chat wie eine App ab.</p>
+    </section>
+
+    <div class="part">
+      <span>Teil 2</span>
+      <h2>Server betreiben</h2>
+      <p>Für alle, die den Chat selbst aufsetzen.</p>
+    </div>
+
+    <section id="docker">
+      <h3><span class="num">12</span>Start mit Docker</h3>
+      <p>Der einfachste Weg. Du brauchst nur Docker mit Compose.</p>
+      <pre><code>git clone https://github.com/Noi922/chat.git
+cd chat
+docker compose up -d</code></pre>
+      <p>Danach läuft der Chat unter <code>http://localhost:3000</code>. Andere Geräte im selben Netz erreichen ihn über die IP-Adresse deines Rechners, zum Beispiel <code>http://192.168.1.20:3000</code>.</p>
+      <div class="table"><table>
+        <tr><th>Aufgabe</th><th>Befehl</th></tr>
+        <tr><td>Stoppen</td><td><code>docker compose down</code></td></tr>
+        <tr><td>Logs ansehen</td><td><code>docker compose logs -f</code></td></tr>
+        <tr><td>Neu starten</td><td><code>docker compose restart</code></td></tr>
+      </table></div>
+      <p>Verlauf und Bilder liegen im Volume <code>chat-data</code> und bleiben beim Stoppen und Aktualisieren erhalten.</p>
+    </section>
+
+    <section id="linux">
+      <h3><span class="num">13</span>Ohne Docker auf Linux</h3>
+      <p>Das Installationsskript richtet den Chat als Systemdienst ein. Es erkennt die Paketmanager von Debian/Ubuntu, Fedora/RHEL, Arch, openSUSE und Alpine und installiert bei Bedarf Node.js (nötig ist Version 18 oder neuer).</p>
+      <pre><code>git clone https://github.com/Noi922/chat.git
+cd chat
+sudo ./install.sh</code></pre>
+      <div class="table"><table>
+        <tr><th>Was</th><th>Wo</th></tr>
+        <tr><td>Programm</td><td><code>/opt/chat-server</code></td></tr>
+        <tr><td>Einstellungen</td><td><code>/etc/chat-server.env</code></td></tr>
+        <tr><td>Daten</td><td><code>/var/lib/chat-server</code></td></tr>
+        <tr><td>Status</td><td><code>systemctl status chat-server</code></td></tr>
+        <tr><td>Logs</td><td><code>journalctl -u chat-server -f</code></td></tr>
+      </table></div>
+      <p>Nur zum Ausprobieren reicht auch <code>npm install</code> und <code>npm start</code> im Projektordner.</p>
+    </section>
+
+    <section id="konfiguration">
+      <h3><span class="num">14</span>Konfiguration</h3>
+      <p>Mit Docker: Kopiere <code>.env.example</code> nach <code>.env</code>, passe die Werte an und starte mit <code>docker compose up -d</code> neu. Ohne Docker: Bearbeite <code>/etc/chat-server.env</code> und führe <code>sudo systemctl restart chat-server</code> aus.</p>
+      <div class="table"><table>
+        <tr><th>Einstellung</th><th>Standard</th><th>Bedeutung</th></tr>
+        <tr><td><code>PORT</code></td><td>3000</td><td>Port des Chats</td></tr>
+        <tr><td><code>SERVER_NAME</code></td><td>Chat</td><td>Name, der im Browser erscheint</td></tr>
+        <tr><td><code>ADMIN_PASSWORD</code></td><td>leer</td><td>Passwort für Admin-Rechte; leer heißt: keine Admins</td></tr>
+        <tr><td><code>ENABLE_UPLOADS</code></td><td>true</td><td>Bilder erlauben</td></tr>
+        <tr><td><code>MAX_UPLOAD_MB</code></td><td>5</td><td>Größte erlaubte Bilddatei</td></tr>
+        <tr><td><code>HISTORY_SIZE</code></td><td>1000</td><td>Gespeicherte Nachrichten pro Raum</td></tr>
+        <tr><td><code>MAX_MESSAGE_LENGTH</code></td><td>2000</td><td>Zeichen pro Nachricht</td></tr>
+        <tr><td><code>MAX_ROOMS</code></td><td>100</td><td>Höchstzahl an Räumen</td></tr>
+        <tr><td><code>TRUST_PROXY</code></td><td>false</td><td>Auf <code>true</code> setzen, wenn ein Reverse-Proxy davor sitzt</td></tr>
+      </table></div>
+      <p>Die vollständige Liste steht in der <a href="https://github.com/Noi922/chat#konfiguration">README</a>.</p>
+    </section>
+
+    <section id="admin">
+      <h3><span class="num">15</span>Admin-Rechte</h3>
+      <ol>
+        <li>Setze in der Konfiguration ein Passwort: <code>ADMIN_PASSWORD=ein-langes-passwort</code>, dann den Server neu starten.</li>
+        <li>Schreibe im Chat <code>/admin ein-langes-passwort</code>. Die Zeile wird nicht als Nachricht gesendet.</li>
+        <li>Neben deinem Namen steht jetzt „Admin".</li>
+      </ol>
+      <div class="table"><table>
+        <tr><th>Als Admin kannst du</th><th>So geht es</th></tr>
+        <tr><td>Fremde Nachrichten löschen</td><td>Papierkorb-Symbol an der Nachricht</td></tr>
+        <tr><td>Jemanden hinauswerfen</td><td><code>/kick Name</code></td></tr>
+        <tr><td>Einen leeren Raum samt Verlauf löschen</td><td><code>/delroom Raum</code></td></tr>
+      </table></div>
+      <div class="note warn"><b>Grenzen kennen.</b>Die Admin-Rechte gelten, bis du die Seite verlässt. Wer hinausgeworfen wurde, kann unter demselben oder einem anderen Namen wieder beitreten – eine dauerhafte Sperre gibt es nicht.</div>
+    </section>
+
+    <section id="internet">
+      <h3><span class="num">16</span>Ins Internet stellen</h3>
+      <p>Der Server spricht nur unverschlüsseltes HTTP. Für den Betrieb im Internet gehört ein Reverse-Proxy mit HTTPS davor. Mit Caddy genügt diese Konfiguration, das Zertifikat holt Caddy selbst:</p>
+      <pre><code>chat.example.com {
+    reverse_proxy localhost:3000
+}</code></pre>
+      <p>Setze dann <code>TRUST_PROXY=true</code>. Ein Beispiel für Nginx steht in der <a href="https://github.com/Noi922/chat#%C3%B6ffentlich-betreiben-https">README</a>.</p>
+      <div class="note warn"><b>Der Chat hat keine Anmeldung.</b>Wer die Adresse kennt, kann mitlesen und mitschreiben. Für einen geschlossenen Kreis schützt du den Zugang im Reverse-Proxy (z. B. mit einem Passwort) oder lässt den Chat nur im eigenen Netz oder VPN laufen.</div>
+    </section>
+
+    <section id="pflege">
+      <h3><span class="num">17</span>Backup und Update</h3>
+      <p><b>Backup:</b> Alles Wichtige liegt in einem Ordner – der Verlauf in <code>state.json</code>, die Bilder in <code>uploads</code>. Ohne Docker ist das <code>/var/lib/chat-server</code>. Mit Docker sicherst du das Volume so:</p>
+      <pre><code>docker run --rm -v chat_chat-data:/data -v "$PWD":/backup alpine tar czf /backup/chat-backup.tar.gz -C /data .</code></pre>
+      <p><b>Update mit Docker:</b></p>
+      <pre><code>git pull
+docker compose up -d --build</code></pre>
+      <p><b>Update ohne Docker:</b></p>
+      <pre><code>git pull
+sudo ./install.sh</code></pre>
+      <p>Einstellungen und Daten bleiben bei beiden Wegen erhalten.</p>
+    </section>
+
+    <section id="fragen">
+      <h3><span class="num">?</span>Häufige Fragen</h3>
+      <details><summary>Oben steht „Verbindung getrennt – verbinde neu …"</summary><div><p>Die Verbindung zum Server ist abgebrochen. Der Chat versucht es von selbst weiter. Bleibt die Meldung, ist der Server nicht erreichbar oder – hinter Nginx – fehlen die Einstellungen für WebSockets.</p></div></details>
+      <details><summary>Ich wurde abgemeldet mit „in einem anderen Tab angemeldet"</summary><div><p>Du hast den Chat mit demselben Namen in einem zweiten Tab oder Fenster geöffnet. Es kann immer nur eines aktiv sein. Für zwei Fenster gleichzeitig brauchst du zwei verschiedene Namen.</p></div></details>
+      <details><summary>Ich kann meine alten Nachrichten nicht mehr bearbeiten</summary><div><p>Der Chat erkennt dich an einem Kennzeichen, das dein Browser speichert. In einem anderen Browser, auf einem anderen Gerät, im privaten Modus oder nach dem Löschen der Browserdaten bist du für den Server eine neue Person.</p></div></details>
+      <details><summary>Ich bekomme keine Benachrichtigungen</summary><div><p>Schalte die Glocke unten links ein und erlaube Benachrichtigungen, wenn der Browser fragt. Sie erscheinen nur bei Erwähnungen und Privatnachrichten und nur, wenn der Chat-Tab im Hintergrund ist. Manche Handy-Browser unterstützen sie nicht.</p></div></details>
+      <details><summary>„Zu viele Nachrichten – bitte kurz warten"</summary><div><p>Der Spam-Schutz erlaubt höchstens 8 Nachrichten in 5 Sekunden. Kurz warten, dann geht es weiter.</p></div></details>
+      <details><summary>Wie lange bleiben Nachrichten gespeichert?</summary><div><p>Pro Raum die letzten 1000 Nachrichten (einstellbar). Ältere werden automatisch entfernt, zusammen mit ihren Bildern.</p></div></details>
+      <details><summary>Der Port 3000 ist schon belegt</summary><div><p>Setze in der Konfiguration einen anderen Port, zum Beispiel <code>PORT=8080</code>, und starte neu.</p></div></details>
+    </section>
+
+    <footer class="end">Quelltext und technische Dokumentation: <a href="https://github.com/Noi922/chat">github.com/Noi922/chat</a></footer>
+  </main>
+</div>
+
+</body>
+</html>
