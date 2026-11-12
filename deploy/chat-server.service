@@ -1,0 +1,30 @@
+[Unit]
+Description=Chat-Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=chat
+Group=chat
+WorkingDirectory=/opt/chat-server
+Environment=NODE_ENV=production
+Environment=DATA_DIR=/var/lib/chat-server
+EnvironmentFile=-/etc/chat-server.env
+ExecStart=/usr/bin/env node /opt/chat-server/server.js
+Restart=on-failure
+RestartSec=3
+
+# Absicherung
+StateDirectory=chat-server
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

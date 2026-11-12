@@ -1,0 +1,25 @@
+services:
+  chat:
+    build: .
+    image: chat-server
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      SERVER_NAME: "${SERVER_NAME:-Chat}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+      ENABLE_UPLOADS: "${ENABLE_UPLOADS:-true}"
+      MAX_UPLOAD_MB: "${MAX_UPLOAD_MB:-5}"
+      HISTORY_SIZE: "${HISTORY_SIZE:-1000}"
+      TRUST_PROXY: "${TRUST_PROXY:-false}"
+    volumes:
+      - chat-data:/data
+    # Absicherung: schreibgeschütztes Dateisystem, keine zusätzlichen Rechte
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  chat-data:

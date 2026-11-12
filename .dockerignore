@@ -1,0 +1,12 @@
+node_modules
+data
+.git
+.github
+test
+deploy
+install.sh
+*.md
+.env
+.env.example
+docker-compose.yml
+Dockerfile
